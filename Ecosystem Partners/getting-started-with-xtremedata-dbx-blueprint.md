@@ -1,17 +1,10 @@
 {{{
-  "title": "Getting Started with Pivotal Greenplum - Blueprint",
-  "date": "3-2-2015",
+  "title": "Getting Started with XtremeData dbX - Blueprint",
+  "date": "3-5-2015",
   "author": "Keith Resar",
   "attachments": [],
   "contentIsHTML": false
 }}}
-
-<!--
-
-TODO:
-* Customer support email address
-
--->
 
 
 
@@ -21,42 +14,34 @@ After reading this article, the user should feel comfortable getting started usi
 
 ### Partner Profile
 
-<img src="../images/pivotal_greenplum/pivotal_greenplum_logo.png" style="border:0;float:right;">
+<img src="../images/xtremedata/xtremelog_wht.png" style="max-width:200px;border:0;float:right;">
 
-Pivotal Greenplum – “Best-in-class, enterprise-grade analytical data warehouse..”
+XtremeData – “On-Demand Big Data Analytics with real-time ingest."
 
-http://pivotal.io/big-data/pivotal-greenplum-database
+http://www.xtremedata.com/
 
 #####Customer Support
 
 |Cloud Alias   	|Sales Contact   	|
 |:-	|:-	|
-|GOGO   	|centurylinkcloud-sales@pivotal.io   	|
+|XDTA   	|centurylinkcloud-sales@xtremedata.com   	|
 
 
 ### Description
 
-Pivotal has integrated their Greenplum technology with the CenturyLink Cloud platform.  The purpose of this KB article is to help the reader take advantage of this integration to achieve rapid time-to-value for this Greenplum solution.
+XtremeData has integrated their dbX technology with the CenturyLink Cloud platform.  The purpose of this KB article is to help the reader take advantage of this integration to achieve rapid time-to-value for this XtremeData solution.
 
-Greenplum incorporates key performance capabilities, flexible data analytics, enterprise grade robustness, seamless integration with analytics stacks and a database management framework focused on reducing total cost of ownership.
+XtremeData delivers high performance, full-featured ANSI SQL database engine designed for performance at all scales, up to 100s of terabytes. ANSI SQL. Simple to deploy, simple to administer, simple to scale up. Any data schema any data location.
 
 
 ### Audience
 
 CenturyLink Cloud Users
 
-### Deployment Packages
-
-
-|[Deploy a New Cluster](#deploying-a-new-cluster)   	|[Expand an Existing Cluster](/howto-pivotal-greenplum-expand-cluster/)   	|
-|:-	|:-	|
-|<p>Deploy a minimal cluster sized for testing.<p>When you're ready, deploy a production capable cluster using the same pattern.<p>See [Deploying a new cluster](#deploying-a-new-cluster) to get started.  If you're looking for a single-button deploy of clusters with more nodes see our guide on [Creating larger cluster Blueprints](/howto-pivotal-greenplum-larger-clusters/)   	|<p>Grow existing clusters to their optimal size from day zero or to accommodate growth over time.<p>We'll cleanly add capacity and leave any application disrupting work to you.<p>See [Expanding an existing cluster](/howto-pivotal-greenplum-expand-cluster/) to get started.   	|
-
-
 
 ### Deploying a New Cluster
 
-Single button deploy of a new cluster including a master host, a standby master for failover, and two nodes.  These are architected for deployment on both on standard cloud servers and Hyperscale servers.  1TB data space and two segments are available on each node.
+Single button deploy of a new cluster including a master host, a standby master for failover, and two nodes.  For best performance these should be deployed on Hyperscale servers.
 
 #### Steps
 
@@ -65,15 +50,15 @@ Single button deploy of a new cluster including a master host, a standby master 
 
   Determine whether you will be building a test cluster with small nodes or a production cluster whose nodes that have increased CPU and RAM available.
 
-  [![](../images/pivotal_greenplum/cluster_blueprint_tiles.png)](#)
+  ![](../images/xtremedata/blueprint_tiles.png)]
 
-  Starting from the CenturyLink Control Panel, navigate to the Blueprints Library. Search for “Pivotal Greenplum” in the keyword search on the right side of the page.
+  Starting from the CenturyLink Control Panel, navigate to the Blueprints Library. Search for “dbX Cluster” in the keyword search on the right side of the page.
 
 2. **Click the Deploy Blueprint button.**
 
 3. **Set Required parameters.**
 
-  ![](../images/pivotal_greenplum/deploy_cluster_parameters.png)
+  ![](../images/xtremedata/deploy_parameters.png)
 
   * **EULA** - Click to accept the software end user license agreement
   * **Cluster ID ** - set unique identifier for all hosts in this Greenplum cluster.  This is used to help other hosts find and join into the cluster
@@ -103,42 +88,15 @@ Single button deploy of a new cluster including a master host, a standby master 
 
   Once the Blueprint has finished execution you will receive an email confirming the newly deployed assets.  If you do not receive an email like the one shown below your cluster may have had a deployment error - review the *Blueprint Build Log* to look for error messages.
 
-  ![](../images/pivotal_greenplum/deploy_cluster_complete_email.png)
+  ![](../images/xtremedata/deploy_cluster_complete_email.png)
 
-8. **Web Command Center** (optional)
+8. **Access Web Command Center**
 
   If you elected to install the optional web command center you may access it via http on port 20800.  Authenticate using the `gpadmin` user and your administrative credentials
 
-  ![](../images/pivotal_greenplum/web_command_center.png)
+  ![](../images/xtremedata/web_command_center.png)
 
-8. **Demo Application** (optional)
-
-  If you elected to install the optional demo application you may access the database from the master server.  Follow the [Pivot Greenplum demo lab](https://github.com/pivotalsoftware/pivotal-samples/tree/master/Labs) to quickly get up to speed on the Greenplum platform.  Authenticate using the `gpadmin` user and your administrative credentials
-
-  ```
-  [gpadmin@localhost ~]$ psql default
-  psql (8.2.15)
-  Type "help" for help.
-
-  default=# \dt retail_demo.*
-                          List of relations
-     Schema    |          Name          | Type  |  Owner  |   Storage
-  -------------+------------------------+-------+---------+-------------
-   retail_demo | categories_dim         | table | gpadmin | append only
-   retail_demo | customer_addresses_dim | table | gpadmin | append only
-   retail_demo | customers_dim          | table | gpadmin | append only
-   retail_demo | date_dim               | table | gpadmin | append only
-   retail_demo | email_addresses_dim    | table | gpadmin | append only
-   retail_demo | order_lineitems        | table | gpadmin | append only
-   retail_demo | orders                 | table | gpadmin | append only
-   retail_demo | payment_methods        | table | gpadmin | append only
-   retail_demo | products_dim           | table | gpadmin | append only
-  (9 rows)
-
-  default=#
-  ```
-
-12. **Enable public access** (optional)
+9. **Enable public access** (optional)
 
   Servers are built using private IPs only with access with client or IPSEC VPN.  For access from the Internet at large add a public IP to your master server.
 
