@@ -50,9 +50,9 @@ Single button deploy of a new cluster including a master host, a standby master 
 
   Determine whether you will be building a test cluster with small nodes or a production cluster whose nodes that have increased CPU and RAM available.
 
-  ![](../images/xtremedata/blueprint_tiles.png)]
+  ![](../images/xtremedata/blueprint_tiles.png)
 
-  Starting from the CenturyLink Control Panel, navigate to the Blueprints Library. Search for “dbX Cluster” in the keyword search on the right side of the page.
+  Starting from the CenturyLink Control Panel, navigate to the Blueprints Library. Search for `dbX Cluster` in the keyword search on the right side of the page.
 
 2. **Click the Deploy Blueprint button.**
 
@@ -61,13 +61,13 @@ Single button deploy of a new cluster including a master host, a standby master 
   ![](../images/xtremedata/dbx_deploy_parameters.png)
 
   * **Head Server** - Select the first option `DBXHD`
-  * **Cluster ID ** - set unique identifier for all hosts in this cluster
-  * **Notification Email** - Email address to receive build notification and dbXaccess information
+  * **Cluster ID** - set unique identifier for all hosts in this cluster
+  * **Notification Email** - Email address to receive build notification and dbX access information
 
 
 4. **Set Optional Parameters**
 
-  Password/Confirm Password (This is the root password for the server. Keep this in a secure place).  It is also used to identify the `gpadmin` user for console and Web Control Center access.
+  Password/Confirm Password (This is the root password for the server. Keep this in a secure place). 
 
   Set DNS to “Manually Specify” and use “8.8.8.8” (or any other public DNS server of your choice).
 
@@ -85,7 +85,7 @@ Single button deploy of a new cluster including a master host, a standby master 
 
 7. **Deployment Complete**
 
-  Once the Blueprint has finished execution you will receive an email confirming the newly deployed assets.  If you do not receive an email like the one shown below your cluster may have had a deployment error - review the *Blueprint Build Log* to look for error messages.
+  Once the Blueprint has finished execution you will receive an email confirming the newly deployed assets.  If you do not receive an email like the one shown below your cluster may have had a deployment error - review the *Blueprint Build Log* for error messages.
 
   ![](../images/xtremedata/dbx_deploy_success_email.png)
 
