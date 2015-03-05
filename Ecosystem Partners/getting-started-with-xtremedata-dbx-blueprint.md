@@ -58,12 +58,11 @@ Single button deploy of a new cluster including a master host, a standby master 
 
 3. **Set Required parameters.**
 
-  ![](../images/xtremedata/deploy_parameters.png)
+  ![](../images/xtremedata/dbx_deploy_parameters.png)
 
-  * **EULA** - Click to accept the software end user license agreement
-  * **Cluster ID ** - set unique identifier for all hosts in this Greenplum cluster.  This is used to help other hosts find and join into the cluster
-  * **Email Address** - Email address to receive build notification and Greenplum access information
-  * **gpadmin Password** - Password used for `gpadmin` user in the web Command Center (ssh login directly via gpadmin is not enabled by default)
+  * **Head Server** - Select the first option `DBXHD`
+  * **Cluster ID ** - set unique identifier for all hosts in this cluster
+  * **Notification Email** - Email address to receive build notification and dbXaccess information
 
 
 4. **Set Optional Parameters**
@@ -82,19 +81,19 @@ Single button deploy of a new cluster including a master host, a standby master 
 
   Once verified, click on the `deploy blueprint` button. You will see the deployment details stating the Blueprint is queued for execution.
 
-  This will kick off the Blueprint deploy process and load a page where you can track the deployment progress. Deployment will typically complete within 15 to 20 minutes.
+  This will kick off the Blueprint deploy process and load a page where you can track the deployment progress. Deployment times may very - wait the build queue for up to date deployment status.
 
 7. **Deployment Complete**
 
   Once the Blueprint has finished execution you will receive an email confirming the newly deployed assets.  If you do not receive an email like the one shown below your cluster may have had a deployment error - review the *Blueprint Build Log* to look for error messages.
 
-  ![](../images/xtremedata/deploy_cluster_complete_email.png)
+  ![](../images/xtremedata/dbx_deploy_success_email.png)
 
-8. **Access Web Command Center**
+8. **Access Web xdAdmin Console**
 
-  If you elected to install the optional web command center you may access it via http on port 20800.  Authenticate using the `gpadmin` user and your administrative credentials
+  Access the xdAdmin web console via https on port 20800.  Authenticate using your root user and associated credentials.
 
-  ![](../images/xtremedata/web_command_center.png)
+  ![](../images/xtremedata/web_gui_screenshot.png)
 
 9. **Enable public access** (optional)
 
@@ -113,7 +112,7 @@ The costs listed above in the above steps are for the infrastructure only.
 
 After deploying this Blueprint, you may secure entitlements to the technology using the following steps:
 
- * Email: centurylinkcloud-sales@pivotal.com
+ * Email: centurylinkcloud-sales@xtremedata.com
 
 ### Frequently Asked Questions
 
@@ -124,23 +123,9 @@ After deploying this Blueprint, you may secure entitlements to the technology us
 **Who should I contact for support?**
 
 * For issues related to cloud infrastructure, please open a ticket using the [CenturyLink Cloud Support Process](../Support/how-do-i-report-a-support-issue.md).
-* For issues related to deploying the Pivotal Greenplum Blueprints and application operation on CenturyLink Cloud and you have a paid license, please contact centurylinkcloud-sales@pivotal.io or follow your existing Pivotal support process if known.
+* For issues related to deploying the XtremeData dbX Blueprints and application operation on CenturyLink Cloud and you have a paid license, please contact centurylinkcloud-sales@xtremedata.com or follow your existing XtremeData support process if known.
 
 
 **How do I learn more about the application?**
 
-View Pivotal's [Getting Started](http://gpdb.docs.pivotal.io/gpdb-434.html) guide and other documentation from the Pivotal documentation hub.
-
-![](../images/pivotal_greenplum/getting_started_pdf.png)
-
-
-**How do I login to my cluster for the first time?**
-
-Access your new Pivotal Greenplum cluster via ssh as the root user whose password you supplied at create time.  
-
-Best practices are to create non-administrative user access.  This can be done by creating another user or by configuring the gpadmin user for remote access.  This can be done by executing the following commands:
-
-```
-# chsh gpadmin bash
-# passwd gpadmin
-```
+View XtremeData's [documentation and other support resources](http://www.xtremedata.com/support).
